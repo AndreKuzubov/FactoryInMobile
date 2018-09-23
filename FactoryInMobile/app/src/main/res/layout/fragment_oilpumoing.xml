@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.factory.andre.factoryinmobile.ui.view.FunctionalDiagramLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fd_oilpumping"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.factory.andre.factoryinmobile.ui.view.TankView
+        android:id="@+id/tv_oilp_tank1"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.factory.andre.factoryinmobile.ui.view.PumpView
+        android:id="@+id/pv_oilp_pump1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        app:layout_constraintRight_toLeftOf="@id/tv_oilp_tank1"
+        app:layout_constraintTop_toBottomOf="@id/tv_oilp_tank1" />
+
+
+    <com.factory.andre.factoryinmobile.ui.view.PumpView
+        android:id="@+id/pv_oilp_pump2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        app:layout_constraintLeft_toRightOf="@id/tv_oilp_tank1"
+        app:layout_constraintTop_toBottomOf="@id/tv_oilp_tank1" />
+
+
+</com.factory.andre.factoryinmobile.ui.view.FunctionalDiagramLayout>

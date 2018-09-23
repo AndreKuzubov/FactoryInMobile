@@ -6,10 +6,6 @@ import com.factory.andre.factoryinmobile.dagger.DaggerAppComponent
 import com.factory.andre.factoryinmobile.dagger.modules.HostModule
 import com.factory.andre.factoryinmobile.dagger.modules.PresenterModule
 import com.factory.andre.factoryinmobile.dagger.modules.RealmModule
-import com.factory.andre.factoryinmobile.realm.AppRealmModule
-import io.realm.Realm
-import io.realm.RealmConfiguration
-import javax.inject.Inject
 
 
 class FactoryApp() : MvpApplication() {

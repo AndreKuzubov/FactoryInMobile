@@ -1,12 +1,12 @@
 package com.factory.andre.factoryinmobile.realm.db.impl
 
 import com.factory.andre.factoryinmobile.model.Auth
-import com.factory.andre.factoryinmobile.realm.realmmodels.AuthRealm
 import com.factory.andre.factoryinmobile.realm.db.IDBAuthRealm
+import com.factory.andre.factoryinmobile.realm.realmmodels.AuthRealm
 import com.factory.andre.factoryinmobile.utils.generateId
-import io.reactivex.*
+import io.reactivex.Observable
+import io.reactivex.ObservableOnSubscribe
 import io.realm.Realm
-import io.realm.RealmObject
 
 
 open class DBAuthRealm() : IDBAuthRealm {

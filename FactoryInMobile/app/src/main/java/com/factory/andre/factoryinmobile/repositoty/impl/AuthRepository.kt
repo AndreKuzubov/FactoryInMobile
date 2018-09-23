@@ -15,7 +15,7 @@ class AuthRepository @Inject constructor(
 ) : IAuthRepository {
 
     override fun auth(login: String, password: String): Observable<Auth> {
-        var observable = authRest.auth(login, password)
+        val observable = authRest.auth(login, password)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
         observable

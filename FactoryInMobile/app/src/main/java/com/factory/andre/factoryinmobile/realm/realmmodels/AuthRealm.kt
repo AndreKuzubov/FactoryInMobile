@@ -1,6 +1,5 @@
 package com.factory.andre.factoryinmobile.realm.realmmodels
 
-import io.realm.RealmModel
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 

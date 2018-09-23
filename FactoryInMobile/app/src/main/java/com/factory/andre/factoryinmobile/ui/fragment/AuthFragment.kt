@@ -12,12 +12,10 @@ import android.widget.Toast
 import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
-import butterknife.OnTextChanged
 import com.arellomobile.mvp.MvpFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.factory.andre.factoryinmobile.FactoryApp
 import com.factory.andre.factoryinmobile.R
-import com.factory.andre.factoryinmobile.presenter.IAuthPresenter
 import com.factory.andre.factoryinmobile.presenter.impl.AuthPresenter
 import com.factory.andre.factoryinmobile.ui.LoginActivity
 import com.factory.andre.factoryinmobile.ui.mvpinterfaces.IAuthView
@@ -42,7 +40,7 @@ class AuthFragment : MvpFragment(), IAuthView {
     lateinit var prAuthProgress: ProgressBar
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        var root = activity.layoutInflater.inflate(R.layout.fragment_auth, null)
+        val root = activity.layoutInflater.inflate(R.layout.fragment_auth, null)
         ButterKnife.bind(this, root)
         authPresenter.attachView(this)
         return root
@@ -52,6 +50,7 @@ class AuthFragment : MvpFragment(), IAuthView {
         super.onAttach(context)
         FactoryApp.applicationComponent?.inject(this)
     }
+
 
     override fun authProgress() {
         Toast.makeText(activity, "authProgress", Toast.LENGTH_LONG).show()
@@ -72,13 +71,9 @@ class AuthFragment : MvpFragment(), IAuthView {
         (activity as LoginActivity).finishLogin()
     }
 
-    @OnTextChanged(R.id.et_frauth_login)
-    fun textChanged() {
-    }
 
     @OnClick(R.id.bt_frautn_auth)
-    open fun auth() {
-
+    fun auth() {
         authPresenter.auth(
                 login = etLogin.text.toString(),
                 password = etPassword.text.toString()

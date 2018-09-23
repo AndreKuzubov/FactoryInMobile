@@ -1,7 +1,8 @@
 package com.factory.andre.factoryinmobile.presenter
 
 
-open interface IAuthPresenter {
+interface IAuthPresenter {
+
 
     fun auth(login: String, password: String)
 

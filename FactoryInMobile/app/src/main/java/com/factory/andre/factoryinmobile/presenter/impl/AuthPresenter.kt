@@ -3,12 +3,8 @@ package com.factory.andre.factoryinmobile.presenter.impl
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import com.factory.andre.factoryinmobile.presenter.IAuthPresenter
-import com.factory.andre.factoryinmobile.realm.db.IDBAuthRealm
 import com.factory.andre.factoryinmobile.repositoty.impl.AuthRepository
-import com.factory.andre.factoryinmobile.retrofit.IAuthRest
 import com.factory.andre.factoryinmobile.ui.mvpinterfaces.IAuthView
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 @InjectViewState
