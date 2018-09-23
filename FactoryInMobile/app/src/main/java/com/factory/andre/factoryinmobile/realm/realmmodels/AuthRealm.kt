@@ -6,7 +6,7 @@ import io.realm.annotations.PrimaryKey
 
 open class AuthRealm constructor(
         @PrimaryKey
-        var id: Int?,
+        var id: Long?,
         var name: String?,
         var login: String?,
         var password: String?,

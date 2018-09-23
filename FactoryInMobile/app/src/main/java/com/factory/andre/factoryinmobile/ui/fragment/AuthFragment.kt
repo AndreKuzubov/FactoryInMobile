@@ -19,6 +19,7 @@ import com.factory.andre.factoryinmobile.FactoryApp
 import com.factory.andre.factoryinmobile.R
 import com.factory.andre.factoryinmobile.presenter.IAuthPresenter
 import com.factory.andre.factoryinmobile.presenter.impl.AuthPresenter
+import com.factory.andre.factoryinmobile.ui.LoginActivity
 import com.factory.andre.factoryinmobile.ui.mvpinterfaces.IAuthView
 import javax.inject.Inject
 
@@ -43,7 +44,7 @@ class AuthFragment : MvpFragment(), IAuthView {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
         var root = activity.layoutInflater.inflate(R.layout.fragment_auth, null)
         ButterKnife.bind(this, root)
-
+        authPresenter.attachView(this)
         return root
     }
 
@@ -53,6 +54,8 @@ class AuthFragment : MvpFragment(), IAuthView {
     }
 
     override fun authProgress() {
+        Toast.makeText(activity, "authProgress", Toast.LENGTH_LONG).show()
+
         btAuth.isEnabled = false
         prAuthProgress.visibility = View.VISIBLE
     }
@@ -60,10 +63,13 @@ class AuthFragment : MvpFragment(), IAuthView {
     override fun authErr(message: String?) {
         btAuth.isEnabled = true
         prAuthProgress.visibility = View.INVISIBLE
+        Toast.makeText(activity, "authErr:$message", Toast.LENGTH_LONG).show()
+
     }
 
     override fun authSuccess() {
-
+        Toast.makeText(activity, "authSuccess", Toast.LENGTH_LONG).show()
+        (activity as LoginActivity).finishLogin()
     }
 
     @OnTextChanged(R.id.et_frauth_login)

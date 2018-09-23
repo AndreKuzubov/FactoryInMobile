@@ -1,19 +1,22 @@
-package com.factory.andre.factoryinmobile.realm.repository.impl
+package com.factory.andre.factoryinmobile.realm.db.impl
 
 import com.factory.andre.factoryinmobile.model.Auth
 import com.factory.andre.factoryinmobile.realm.realmmodels.AuthRealm
-import com.factory.andre.factoryinmobile.realm.repository.IAuthRealmRepository
+import com.factory.andre.factoryinmobile.realm.db.IDBAuthRealm
+import com.factory.andre.factoryinmobile.utils.generateId
 import io.reactivex.*
 import io.realm.Realm
+import io.realm.RealmObject
 
-open class AuthRealmRepository() : IAuthRealmRepository {
+
+open class DBAuthRealm() : IDBAuthRealm {
+
 
     override fun addAuth(auth: Auth) {
-        var realm = Realm.getDefaultInstance()
-        realm.executeTransactionAsync { r ->
+        Realm.getDefaultInstance().executeTransactionAsync { r ->
             r.delete(AuthRealm::class.java)
-
-            var realmAuth = r.createObject(AuthRealm::class.java)
+            val nextID = r.generateId(AuthRealm::class.java)
+            var realmAuth = r.createObject(AuthRealm::class.java, nextID)
             realmAuth.login = auth.login
             realmAuth.name = auth.name
             realmAuth.password = auth.password

@@ -1,5 +1,6 @@
 package com.factory.andre.factoryinmobile.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.FrameLayout
 import butterknife.BindView
@@ -33,6 +34,10 @@ class LoginActivity : MvpActivity() {
 
     override fun onStart() {
         super.onStart()
+    }
+
+    open fun finishLogin() {
+        startActivity(Intent(this, MainActivity::class.java))
     }
 
 }

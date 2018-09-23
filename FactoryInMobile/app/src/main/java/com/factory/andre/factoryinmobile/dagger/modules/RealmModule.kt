@@ -2,12 +2,14 @@ package com.factory.andre.factoryinmobile.dagger.modules
 
 import android.content.Context
 import com.factory.andre.factoryinmobile.realm.AppRealmModule
-import com.factory.andre.factoryinmobile.realm.repository.IAuthRealmRepository
-import com.factory.andre.factoryinmobile.realm.repository.impl.AuthRealmRepository
+import com.factory.andre.factoryinmobile.realm.db.IDBAuthRealm
+import com.factory.andre.factoryinmobile.realm.db.impl.DBAuthRealm
+import com.factory.andre.factoryinmobile.realm.realmmodels.AuthRealm
 import dagger.Module
 import dagger.Provides
 import io.realm.Realm
 import io.realm.RealmConfiguration
+import io.realm.RealmObject
 
 @Module
 class RealmModule(var context: Context) {
@@ -21,11 +23,12 @@ class RealmModule(var context: Context) {
                 .deleteRealmIfMigrationNeeded()
                 .build()
         Realm.setDefaultConfiguration(config)
+
     }
 
     @Provides
-    fun provideAuthRealm(): IAuthRealmRepository {
-        return AuthRealmRepository()
+    fun provideDBAuth(): IDBAuthRealm {
+        return DBAuthRealm()
     }
 
 }
