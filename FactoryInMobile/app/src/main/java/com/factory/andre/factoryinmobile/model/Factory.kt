@@ -4,21 +4,19 @@ import com.factory.andre.factoryinmobile.model.base.IBaseModel
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class Auth(
-        @SerializedName("name")
+data class Factory(
+        @SerializedName("factory")
         @Expose
-        var name: String? = null,
+        var name: String?,
 
-        @SerializedName("login")
+        @SerializedName("pumpes")
         @Expose
-        var login: String? = null,
+        var pumpes: List<Pump>?,
 
-        @SerializedName("pass")
+        @SerializedName("tankers")
         @Expose
-        var password: String? = null,
+        var tanks: List<Tank>?,
 
-        override var timestamp: Long? = null
+        override var timestamp: Long?
 ) : IBaseModel {
-
-
 }

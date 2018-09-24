@@ -7,8 +7,7 @@ import android.os.IBinder
 open class FactorySurveyService : Service() {
 
     override fun onBind(intent: Intent?): IBinder {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-
+        TODO("FactorySurveyService not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
 }

@@ -25,15 +25,23 @@ class TankView : View {
 
     var fillingPercent: Int = 0
         set(value) {
-            if (value < 0 || value > 100)
+            if (value > 100) {
+                field = 100
+                invalidate()
                 return
+            }
+            if (value < 0) {
+                field = 0
+                invalidate()
+                return
+            }
             field = value
             invalidate()
         }
         get
 
-    val strokePaint = Paint()
-    val fillPaint = Paint()
+    private val strokePaint = Paint()
+    private val fillPaint = Paint()
 
     constructor(context: Context?) : super(context)
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)
@@ -41,9 +49,10 @@ class TankView : View {
 
     init {
         strokePaint.style = Paint.Style.STROKE
-        strokePaint.strokeWidth = dpToPx(1).toFloat()
+        strokePaint.strokeWidth = dpToPx(2).toFloat()
 
         fillPaint.style = Paint.Style.FILL
+        fillPaint.color = Color.BLUE
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {

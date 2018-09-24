@@ -45,9 +45,9 @@ class PumpView : View {
         get
 
 
-    val circlePaint = Paint()
-    val circleBackGroundPaint = Paint()
-    val arcPaint = Paint()
+    private val circlePaint = Paint()
+    private val circleBackGroundPaint = Paint()
+    private val arcPaint = Paint()
 
 
     constructor(context: Context?) : super(context)
@@ -59,9 +59,10 @@ class PumpView : View {
         circleBackGroundPaint.color = Color.WHITE
 
         circlePaint.style = Paint.Style.STROKE
-        circlePaint.strokeWidth = dpToPx(1).toFloat()
-
+        circlePaint.strokeWidth = dpToPx(3).toFloat()
         circlePaint.style = Paint.Style.FILL
+
+        arcPaint.style = Paint.Style.FILL_AND_STROKE
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -83,7 +84,7 @@ class PumpView : View {
         canvas.drawCircle(cx, cy, radius, circleBackGroundPaint)
 
         arcPaint.color = when (status) {
-            ON -> Color.GREEN
+            ON -> Color.BLUE
             WARNING -> Color.YELLOW
             ALARM -> Color.RED
             OFF -> Color.DKGRAY
@@ -91,11 +92,9 @@ class PumpView : View {
 
         val arcRadius = radius * voltagePercent / 100f
 
-        val sweepAgre = turnoversPercent / 100f
+        val sweepAgre = turnoversPercent * 360 / 100f
         canvas.drawArc(cx - arcRadius, cy - arcRadius, cx + arcRadius, cy + arcRadius,
                 0f, sweepAgre, true, arcPaint)
-
-
 
         circlePaint.color = when (status) {
             ON -> Color.GREEN

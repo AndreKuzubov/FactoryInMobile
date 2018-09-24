@@ -7,7 +7,7 @@ import android.content.Intent
 class BootReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        TODO("BootReceiver not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
 }

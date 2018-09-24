@@ -7,32 +7,94 @@
 
 
     <com.factory.andre.factoryinmobile.ui.view.TankView
-        android:id="@+id/tv_oilp_tank1"
+        android:id="@+id/tv_oilp_tankershipdiesel"
         android:layout_width="70dp"
         android:layout_height="100dp"
         android:layout_marginTop="20dp"
+        android:tag="tankerShipDiesel"
         app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <com.factory.andre.factoryinmobile.ui.view.PumpView
-        android:id="@+id/pv_oilp_pump1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+    <com.factory.andre.factoryinmobile.ui.view.TankView
+        android:id="@+id/tv_oilp_porttankdiesel1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_margin="20dp"
-        app:layout_constraintRight_toLeftOf="@id/tv_oilp_tank1"
-        app:layout_constraintTop_toBottomOf="@id/tv_oilp_tank1" />
+        android:layout_marginTop="20dp"
+        android:tag="portTankDiesel1"
+        app:layout_constraintRight_toLeftOf="@id/tv_oilp_tankershipdiesel"
+        app:layout_constraintTop_toBottomOf="@id/tv_oilp_tankershipdiesel" />
+
+
+    <com.factory.andre.factoryinmobile.ui.view.TankView
+        android:id="@+id/tv_oilp_porttankdiesel1_1"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="30dp"
+        android:tag="portTankDiesel1_1"
+        app:layout_constraintLeft_toRightOf="@id/tv_oilp_porttankdiesel1"
+        app:layout_constraintTop_toBottomOf="@id/tv_oilp_porttankdiesel1" />
 
 
     <com.factory.andre.factoryinmobile.ui.view.PumpView
-        android:id="@+id/pv_oilp_pump2"
+        android:id="@+id/pv_oilp_pumpportTankDiesel1_1portTankDiesel1"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="20dp"
-        app:layout_constraintLeft_toRightOf="@id/tv_oilp_tank1"
-        app:layout_constraintTop_toBottomOf="@id/tv_oilp_tank1" />
+        android:tag="portTankDiesel1_1-portTankDiesel1"
+        app:layout_constraintEnd_toStartOf="@+id/tv_oilp_porttankdiesel1_1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_oilp_porttankdiesel1" />
+
+
+    <com.factory.andre.factoryinmobile.ui.view.PumpView
+        android:id="@+id/pv_oilp_portTankDiesel1tankerShipDiesel"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:tag="portTankDiesel1-tankerShipDiesel"
+        app:layout_constraintStart_toEndOf="@+id/tv_oilp_porttankdiesel1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_oilp_tankershipdiesel" />
+
+
+    <com.factory.andre.factoryinmobile.ui.view.TankView
+        android:id="@+id/tv_oilp_tankerShipGasole"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:tag="tankerShipGasole"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.factory.andre.factoryinmobile.ui.view.TankView
+        android:id="@+id/tv_oilp_portTankGasole"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="180dp"
+        android:tag="portTankGasole"
+        app:layout_constraintEnd_toEndOf="@+id/tv_oilp_tankerShipGasole"
+        app:layout_constraintTop_toBottomOf="@+id/tv_oilp_tankerShipGasole" />
+
+
+    <com.factory.andre.factoryinmobile.ui.view.PumpView
+        android:id="@+id/pv_oilp_portTankGasoletankerShipGasole"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:tag="portTankGasole-tankerShipGasole"
+        app:layout_constraintBottom_toTopOf="@+id/tv_oilp_portTankGasole"
+        app:layout_constraintStart_toStartOf="@+id/tv_oilp_tankerShipGasole"
+        app:layout_constraintTop_toBottomOf="@+id/tv_oilp_tankerShipGasole" />
 
 
 </com.factory.andre.factoryinmobile.ui.view.FunctionalDiagramLayout>

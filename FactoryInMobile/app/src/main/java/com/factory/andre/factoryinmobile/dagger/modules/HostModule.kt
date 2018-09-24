@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 @Module
 class HostModule() {
 
-    val HOST = "http://192.168.1.100:5050"
+    val HOST = "http://192.168.1.111:5050"
 
     @Provides
     fun provideAuthRestofit(): IAuthRest {

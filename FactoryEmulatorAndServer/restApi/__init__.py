@@ -21,7 +21,7 @@ def auth():
     return response
 
 
-@app.route("/factory<name>")
+@app.route("/factory<name>", methods=['POST', 'GET'])
 def factoryDetails(name='', methods=['POST', 'GET']):
     response = json.dumps({
         'factory': name,

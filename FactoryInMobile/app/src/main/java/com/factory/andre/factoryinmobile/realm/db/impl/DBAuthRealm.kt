@@ -16,7 +16,7 @@ open class DBAuthRealm() : IDBAuthRealm {
         Realm.getDefaultInstance().executeTransactionAsync { r ->
             r.delete(AuthRealm::class.java)
             val nextID = r.generateId(AuthRealm::class.java)
-            var realmAuth = r.createObject(AuthRealm::class.java, nextID)
+            val realmAuth = r.createObject(AuthRealm::class.java, nextID)
             realmAuth.login = auth.login
             realmAuth.name = auth.name
             realmAuth.password = auth.password
@@ -33,7 +33,8 @@ open class DBAuthRealm() : IDBAuthRealm {
                 a = Auth(
                         name = result.name,
                         login = result.login,
-                        password = result.password)
+                        password = result.password
+                )
             }
 
             e.onNext(a)
